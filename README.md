@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <string.h>
 
 int main() {
@@ -27,4 +27,28 @@ int main() {
 
         for (int i = 0; i < length; i++) {
             if (word[i] == letter && guess[i] == '_') {
-                guess[i] = lette…
+                guess[i] = letter;
+                found = 1;
+                correct++;
+            }
+        }
+
+        if (!found) {
+            chances--;
+            printf("Wrong guess! Chances left: %d\n", chances);
+        } else {
+            printf("Good guess!\n");
+        }
+    }
+
+    if (correct == length) {
+        printf("\n🎉 Congratulations! You guessed the word: %s\n", word);
+    } else {
+        printf("\n😢 Game Over! The word was: %s\n", word);
+    }
+
+    return 0;
+}
+
+    gue
+
